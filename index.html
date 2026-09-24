@@ -5,41 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TKO - Official Music Store</title>
   <style>
-    :root {
-      --bg: #090909;
-      --card: #151515;
-      --gold: #f5b942;
-      --orange: #ff6a00;
-      --text: #f5f5f5;
-      --muted: #b8b8b8;
-      --border: rgba(255,255,255,0.12);
-    }
+    :root { --bg: #090909; --gold: #f5b942; --orange: #ff6a00; --text: #f5f5f5; --muted: #b8b8b8; --border: rgba(255,255,255,0.12); }
     * { box-sizing: border-box; scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: radial-gradient(circle at top left, rgba(255,106,0,0.22), transparent 35%), radial-gradient(circle at top right, rgba(245,185,66,0.15), transparent 30%), var(--bg);
-      color: var(--text);
-    }
-    header { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 30px; position: relative; overflow: hidden; }
-    nav {
-      position: fixed; top: 0; left: 0; width: 100%; padding: 18px 30px;
-      display: flex; justify-content: space-between; align-items: center;
-      background: rgba(9,9,9,0.82); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border); z-index: 1000;
-    }
+    body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: radial-gradient(circle at top left, rgba(255,106,0,0.22), transparent 35%), radial-gradient(circle at top right, rgba(245,185,66,0.15), transparent 30%), var(--bg); color: var(--text); }
+    header { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 30px; }
+    nav { position: fixed; top: 0; left: 0; width: 100%; padding: 18px 30px; display: flex; justify-content: space-between; align-items: center; background: rgba(9,9,9,0.82); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; }
     nav .logo { font-size: 24px; font-weight: 900; letter-spacing: 3px; color: var(--gold); }
-    nav a { color: var(--text); text-decoration: none; margin-left: 20px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
-    nav a:hover { color: var(--gold); }
+    nav a { color: var(--text); text-decoration: none; margin-left: 20px; font-size: 14px; text-transform: uppercase; }
     .hero { max-width: 900px; margin-top: 70px; }
-    .tag { display: inline-block; padding: 8px 14px; border: 1px solid var(--gold); color: var(--gold); border-radius: 100px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+    .tag { display: inline-block; padding: 8px 14px; border: 1px solid var(--gold); color: var(--gold); border-radius: 100px; font-size: 13px; text-transform: uppercase; margin-bottom: 20px; }
     h1 { font-size: clamp(70px, 12vw, 160px); margin: 0; line-height: 0.9; letter-spacing: -5px; }
-    .subtitle { font-size: clamp(22px, 4vw, 44px); max-width: 800px; margin: 24px 0; font-weight: 700; line-height: 1.1; }
+    .subtitle { font-size: clamp(22px, 4vw, 44px); margin: 24px 0; font-weight: 700; }
     .description { color: var(--muted); font-size: 18px; max-width: 650px; line-height: 1.6; }
-    .buttons { margin-top: 35px; display: flex; gap: 15px; flex-wrap: wrap; }
-    .btn { display: inline-block; padding: 14px 22px; border-radius: 8px; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; cursor: pointer; border: none; }
+    .buttons { margin-top: 35px; display: flex; gap: 15px; }
+    .btn { display: inline-block; padding: 14px 22px; border-radius: 8px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 14px; }
     .btn-primary { background: linear-gradient(135deg, var(--gold), var(--orange)); color: #111; }
-    .btn-secondary { border: 1px solid var(--border); color: var(--text); background: rgba(255,255,255,0.04); }
+    .btn-secondary { border: 1px solid var(--border); color: var(--text); }
     section { padding: 90px 30px; max-width: 1150px; margin: auto; }
     section h2 { font-size: 42px; margin-bottom: 25px; }
     .music-list { display: grid; gap: 18px; }
@@ -61,14 +42,7 @@
     .store-card { background: linear-gradient(135deg, rgba(245,185,66,0.12), rgba(255,106,0,0.08)); border: 1px solid var(--border); border-radius: 18px; padding: 30px; margin-top: 25px; }
     .store-card h3 { font-size: 30px; margin-top: 0; }
     footer { padding: 35px 30px; text-align: center; color: var(--muted); border-top: 1px solid var(--border); }
-    @media (max-width: 800px) {
-      nav { padding: 15px; }
-      nav a { margin-left: 10px; font-size: 12px; }
-      .track { grid-template-columns: 1fr; }
-      .track audio { width: 100%; }
-      .about { grid-template-columns: 1fr; }
-      .plans { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 800px) { nav { padding: 15px; } nav a { margin-left: 10px; font-size: 12px; } .track { grid-template-columns: 1fr; } .track audio { width: 100%; } .about { grid-template-columns: 1fr; } .plans { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -100,9 +74,9 @@
         <div class="track-number">1</div>
         <div>
           <h3>Woo! Music</h3>
-          <p>TKO Officiel</p>
+          <p>TKO · Original Track</p>
         </div>
-        <audio controls preload="none"><source src="woo!%20music.mp3" type="audio/mpeg"></audio>
+        <audio controls preload="none"><source src="woo-music.mp3" type="audio/mpeg"></audio>
       </div>
     </div>
   </section>
@@ -124,7 +98,7 @@
     <div class="plans">
       <div class="plan">
         <h3>Fan</h3>
-        <div class="price">3 € / mois</div>
+        <div class="price">Gratuit</div>
         <ul>
           <li>Accès écoute illimitée</li>
           <li>Nouveautés en avant-première</li>
@@ -134,7 +108,7 @@
       </div>
       <div class="plan">
         <h3>VIP</h3>
-        <div class="price">7 € / mois</div>
+        <div class="price">Bientôt</div>
         <ul>
           <li>Tout l’abonnement Fan</li>
           <li>Téléchargements inclus</li>
@@ -150,7 +124,6 @@
     <div class="store-card">
       <h3>Woo! Music</h3>
       <p>Téléchargement MP3 haute qualité · Livraison immédiate</p>
-      <div class="price">2 € une fois</div>
       <a class="btn btn-primary" href="#">Acheter le morceau</a>
     </div>
   </section>
