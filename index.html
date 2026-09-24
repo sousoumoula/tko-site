@@ -14,67 +14,53 @@
       --muted: #b8b8b8;
       --border: rgba(255,255,255,0.12);
     }
-
     * { box-sizing: border-box; scroll-behavior: smooth; }
-
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
       background: radial-gradient(circle at top left, rgba(255,106,0,0.22), transparent 35%), radial-gradient(circle at top right, rgba(245,185,66,0.15), transparent 30%), var(--bg);
       color: var(--text);
     }
-
     header { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 30px; position: relative; overflow: hidden; }
-
     nav {
       position: fixed; top: 0; left: 0; width: 100%; padding: 18px 30px;
       display: flex; justify-content: space-between; align-items: center;
       background: rgba(9,9,9,0.82); backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border); z-index: 1000;
     }
-
     nav .logo { font-size: 24px; font-weight: 900; letter-spacing: 3px; color: var(--gold); }
     nav a { color: var(--text); text-decoration: none; margin-left: 20px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
     nav a:hover { color: var(--gold); }
-
     .hero { max-width: 900px; margin-top: 70px; }
     .tag { display: inline-block; padding: 8px 14px; border: 1px solid var(--gold); color: var(--gold); border-radius: 100px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
     h1 { font-size: clamp(70px, 12vw, 160px); margin: 0; line-height: 0.9; letter-spacing: -5px; }
     .subtitle { font-size: clamp(22px, 4vw, 44px); max-width: 800px; margin: 24px 0; font-weight: 700; line-height: 1.1; }
     .description { color: var(--muted); font-size: 18px; max-width: 650px; line-height: 1.6; }
-
     .buttons { margin-top: 35px; display: flex; gap: 15px; flex-wrap: wrap; }
     .btn { display: inline-block; padding: 14px 22px; border-radius: 8px; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; cursor: pointer; border: none; }
     .btn-primary { background: linear-gradient(135deg, var(--gold), var(--orange)); color: #111; }
     .btn-secondary { border: 1px solid var(--border); color: var(--text); background: rgba(255,255,255,0.04); }
-
     section { padding: 90px 30px; max-width: 1150px; margin: auto; }
     section h2 { font-size: 42px; margin-bottom: 25px; }
-
     .music-list { display: grid; gap: 18px; }
     .track { background: rgba(255,255,255,0.045); border: 1px solid var(--border); border-radius: 16px; padding: 22px; display: grid; grid-template-columns: 50px 1fr auto; align-items: center; gap: 18px; }
     .track-number { font-size: 24px; color: var(--gold); font-weight: 900; }
     .track h3 { margin: 0 0 8px; font-size: 24px; }
     .track p { margin: 0; color: var(--muted); }
     .track audio { width: 260px; max-width: 100%; }
-
     .about { display: grid; grid-template-columns: 320px 1fr; gap: 35px; align-items: center; }
     .photo { width: 100%; aspect-ratio: 1 / 1; border-radius: 22px; background: linear-gradient(135deg, rgba(245,185,66,0.25), rgba(255,106,0,0.15)), #1a1a1a; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 20px; text-align: center; padding: 20px; }
     .about p { color: var(--muted); line-height: 1.7; font-size: 18px; }
     .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
     .tags span { background: rgba(245,185,66,0.12); color: var(--gold); border: 1px solid rgba(245,185,66,0.35); padding: 8px 12px; border-radius: 100px; font-size: 13px; }
-
     .plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
     .plan { background: rgba(255,255,255,0.045); border: 1px solid var(--border); border-radius: 18px; padding: 28px; }
     .plan h3 { font-size: 28px; margin: 0; }
     .price { font-size: 34px; color: var(--gold); font-weight: 900; margin: 16px 0; }
     .plan ul { padding-left: 20px; color: var(--muted); line-height: 1.9; }
-
     .store-card { background: linear-gradient(135deg, rgba(245,185,66,0.12), rgba(255,106,0,0.08)); border: 1px solid var(--border); border-radius: 18px; padding: 30px; margin-top: 25px; }
     .store-card h3 { font-size: 30px; margin-top: 0; }
-
     footer { padding: 35px 30px; text-align: center; color: var(--muted); border-top: 1px solid var(--border); }
-
     @media (max-width: 800px) {
       nav { padding: 15px; }
       nav a { margin-left: 10px; font-size: 12px; }
@@ -86,7 +72,6 @@
   </style>
 </head>
 <body>
-
   <nav>
     <div class="logo">TKO</div>
     <div>
@@ -96,7 +81,6 @@
       <a href="#store">Store</a>
     </div>
   </nav>
-
   <header>
     <div class="hero">
       <span class="tag">Official Music Store</span>
@@ -109,37 +93,19 @@
       </div>
     </div>
   </header>
-
   <section id="music">
     <h2>Music</h2>
     <div class="music-list">
       <div class="track">
         <div class="track-number">1</div>
         <div>
-          <h3>Barn Floor Agent</h3>
-          <p>ElectroFunk · 128 BPM · 3:42</p>
+          <h3>Woo! Music</h3>
+          <p>TKO Officiel</p>
         </div>
-        <audio controls><source src="assets/music/barn-floor-agent.mp3" type="audio/mpeg"></audio>
-      </div>
-      <div class="track">
-        <div class="track-number">2</div>
-        <div>
-          <h3>Free Tonight</h3>
-          <p>Funk Disco · Soul · 4:10</p>
-        </div>
-        <audio controls><source src="assets/music/free-tonight.mp3" type="audio/mpeg"></audio>
-      </div>
-      <div class="track">
-        <div class="track-number">3</div>
-        <div>
-          <h3>Comme Avant</h3>
-          <p>R&B · Intime · 3:58</p>
-        </div>
-        <audio controls><source src="assets/music/comme-avant.mp3" type="audio/mpeg"></audio>
+        <audio controls preload="none"><source src="woo!%20music.mp3" type="audio/mpeg"></audio>
       </div>
     </div>
   </section>
-
   <section id="about">
     <h2>About</h2>
     <div class="about">
@@ -153,7 +119,6 @@
       </div>
     </div>
   </section>
-
   <section id="subscribe">
     <h2>Subscribe</h2>
     <div class="plans">
@@ -180,20 +145,17 @@
       </div>
     </div>
   </section>
-
   <section id="store">
     <h2>Store</h2>
     <div class="store-card">
-      <h3>Barn Floor Agent</h3>
+      <h3>Woo! Music</h3>
       <p>Téléchargement MP3 haute qualité · Livraison immédiate</p>
       <div class="price">2 € une fois</div>
       <a class="btn btn-primary" href="#">Acheter le morceau</a>
     </div>
   </section>
-
   <footer>
     TKO<br>© 2025 TKO — Tous droits réservés
   </footer>
-
 </body>
 </html>
