@@ -235,6 +235,80 @@ nav{
   letter-spacing:0.12em;text-transform:uppercase;border-radius:2px;
 }
 
+/* ── VINYLE ANIMÉ TKO ── */
+.vinyl-wrap{
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at center, #1a1a1a 0%, #080808 80%);
+}
+.vinyl{
+  width:85%;aspect-ratio:1/1;
+  border-radius:50%;
+  background:
+    repeating-radial-gradient(
+      circle at center,
+      #0a0a0a 0px,
+      #0a0a0a 2px,
+      #1a1a1a 3px,
+      #0a0a0a 4px
+    );
+  position:relative;
+  box-shadow:
+    0 0 40px rgba(204,0,0,0.25),
+    inset 0 0 60px rgba(0,0,0,0.9);
+  animation:spin 4s linear infinite;
+  display:flex;align-items:center;justify-content:center;
+}
+.vinyl::before{
+  content:'';
+  position:absolute;inset:0;
+  border-radius:50%;
+  background:
+    conic-gradient(
+      from 0deg,
+      rgba(255,255,255,0.06) 0deg,
+      transparent 20deg,
+      rgba(255,255,255,0.06) 40deg,
+      transparent 60deg,
+      rgba(255,255,255,0.06) 90deg,
+      transparent 120deg,
+      rgba(255,255,255,0.06) 180deg,
+      transparent 220deg,
+      rgba(255,255,255,0.06) 280deg,
+      transparent 340deg
+    );
+  pointer-events:none;
+}
+.vinyl-label{
+  width:38%;aspect-ratio:1/1;
+  border-radius:50%;
+  background:radial-gradient(circle, #cc0000 0%, #8a0000 100%);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 20px rgba(204,0,0,0.6), inset 0 0 15px rgba(0,0,0,0.4);
+  position:relative;z-index:2;
+}
+.vinyl-label span{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(1.2rem,2vw,1.8rem);
+  letter-spacing:0.1em;
+  color:#fff;
+  text-shadow:0 0 10px rgba(0,0,0,0.6);
+}
+.vinyl-label::after{
+  content:'';
+  position:absolute;
+  width:8%;aspect-ratio:1/1;
+  border-radius:50%;
+  background:#080808;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  box-shadow:inset 0 0 4px #000;
+}
+@keyframes spin{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+
 /* ── PLANS ── */
 .plans{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
 .plan{
@@ -443,8 +517,13 @@ footer p{font-size:0.72rem;opacity:0.3;}
   <div class="section-label">About</div>
   <div class="bio-grid">
     <div class="bio-photo">
-      <!-- <img src="photo.jpg" alt="TKO"> -->
-      Ta photo ici
+      <div class="vinyl-wrap">
+        <div class="vinyl">
+          <div class="vinyl-label">
+            <span>TKO</span>
+          </div>
+        </div>
+      </div>
     </div>
     <div>
       <h2 class="bio-title">TK<span>O</span></h2>
@@ -470,7 +549,7 @@ footer p{font-size:0.72rem;opacity:0.3;}
   <div class="plans">
     <div class="plan">
       <div class="plan-name">Fan</div>
-      <div class="plan-price">Gratuit <span></span></div>
+      <div class="plan-price">3 € <span>/ mois</span></div>
       <ul class="plan-features">
         <li>Accès écoute illimitée</li>
         <li>Nouveautés en avant-première</li>
