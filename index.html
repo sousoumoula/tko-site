@@ -9,6 +9,8 @@ nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-betwe
 .links{display:flex;gap:1.5rem;align-items:center}
 .links a{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;opacity:.6;transition:.2s}
 .links a:hover{opacity:1;color:var(--red2)}
+.tiktok-btn{font-size:.72rem!important;letter-spacing:.15em!important;text-transform:uppercase!important;padding:.4rem .8rem!important;background:rgba(204,0,0,.15)!important;border:1px solid rgba(204,0,0,.5)!important;border-radius:4px!important;color:#fff!important;opacity:1!important;transition:.2s!important}
+.tiktok-btn:hover{background:var(--red)!important;box-shadow:0 0 15px rgba(255,32,32,.5)!important;color:#fff!important;opacity:1!important}
 .lang{position:relative}
 .lang-btn{background:rgba(204,0,0,.15);border:1px solid rgba(204,0,0,.4);color:#fff;padding:.4rem .7rem;font-size:.7rem;letter-spacing:.1em;border-radius:4px;display:flex;align-items:center;gap:.4rem;transition:.2s}
 .lang-btn:hover{background:rgba(204,0,0,.3);border-color:var(--red2)}
@@ -142,14 +144,11 @@ nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-betwe
 .mp2.playing .eq span:nth-child(3){animation-delay:.3s}
 .mp2.playing .eq span:nth-child(4){animation-delay:.45s}
 @keyframes eq{50%{height:100%}}
-footer{border-top:1px solid var(--border);padding:2.5rem 2rem;max-width:960px;margin:0 auto;display:flex;flex-direction:column;gap:1.5rem;align-items:center;text-align:center}
+footer{border-top:1px solid var(--border);padding:2.5rem 2rem;max-width:960px;margin:0 auto;display:flex;flex-direction:column;gap:1rem;align-items:center;text-align:center}
 footer .logo{font-size:1.6rem;opacity:.5}
-.socials{display:flex;gap:1.2rem;justify-content:center}
-.socials a{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;opacity:.5;transition:.2s;color:#fff}
-.socials a:hover{opacity:1;color:var(--red2)}
 footer p{font-size:.72rem;opacity:.3}
 @media(max-width:768px){
-nav{padding:.8rem 1rem}.links{gap:.7rem}.links a{font-size:.58rem;letter-spacing:.08em}.lang-btn{padding:.3rem .5rem;font-size:.6rem}
+nav{padding:.8rem 1rem}.links{gap:.5rem}.links a{font-size:.55rem;letter-spacing:.05em}.tiktok-btn{font-size:.55rem!important;padding:.3rem .5rem!important}.lang-btn{padding:.3rem .5rem;font-size:.6rem}
 .hero{height:auto;min-height:600px;padding:5rem 1.2rem 2rem}.sun{width:60%;bottom:22%}.grid{height:35%}.title{font-size:clamp(4rem,20vw,7rem)}
 .s{padding:4rem 1.2rem}.bg2,.plans,.sgrid,.form-row{grid-template-columns:1fr}
 .tt{grid-template-columns:42px 1fr;gap:.7rem;padding:1rem}.tn{width:38px;height:38px}
@@ -157,7 +156,7 @@ nav{padding:.8rem 1rem}.links{gap:.7rem}.links a{font-size:.58rem;letter-spacing
 .mp2{padding:.6rem 1rem;gap:.7rem}.mpb{width:42px;height:42px}.mpp,.eq{display:none}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-</style></head><body><nav><a href="#" class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">TKO</a><div class="links"><a href="#music" data-i18n="nav_music">Musiques</a><a href="#about" data-i18n="nav_about">À propos</a><a href="#subscribe" data-i18n="nav_sub">S'abonner</a><a href="#store" data-i18n="nav_store">Boutique</a><div class="lang" id="lang"><button class="lang-btn" onclick="event.stopPropagation();document.getElementById('lang').classList.toggle('open')"><span class="flag" id="curFlag">🇫🇷</span><span id="curLang">FR</span><span style="font-size:.5rem;opacity:.7">▾</span></button><div class="lang-menu"><button onclick="setLang('fr',this)" class="active"><span>🇫🇷</span> Français</button><button onclick="setLang('en',this)"><span>🇬🇧</span> English</button><button onclick="setLang('es',this)"><span>🇪🇸</span> Español</button></div></div></div></nav>
+</style></head><body><nav><a href="#" class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">TKO</a><div class="links"><a href="#music" data-i18n="nav_music">Musiques</a><a href="#about" data-i18n="nav_about">À propos</a><a href="#subscribe" data-i18n="nav_sub">S'abonner</a><a href="#store" data-i18n="nav_store">Boutique</a><a href="https://www.tiktok.com/@zaydennk" target="_blank" rel="noopener" class="tiktok-btn">TikTok</a><div class="lang" id="lang"><button class="lang-btn" onclick="event.stopPropagation();document.getElementById('lang').classList.toggle('open')"><span class="flag" id="curFlag">🇫🇷</span><span id="curLang">FR</span><span style="font-size:.5rem;opacity:.7">▾</span></button><div class="lang-menu"><button onclick="setLang('fr',this)" class="active"><span>🇫🇷</span> Français</button><button onclick="setLang('en',this)"><span>🇬🇧</span> English</button><button onclick="setLang('es',this)"><span>🇪🇸</span> Español</button></div></div></div></nav>
 
 <div class="hero"><div class="bg"><div class="sun"></div><div class="grid"></div></div><div class="hero-top"><div class="eyebrow" data-i18n="eyebrow">Boutique Officielle</div><h1 class="title">TK<span class="r">O</span></h1><p class="sub">Funk · Soul · ElectroHouse</p></div><div class="hero-bottom"><div class="cta"><a class="btn red" href="#music" data-i18n="cta_listen">▶ Écouter</a><a class="btn ghost" href="#subscribe" data-i18n="cta_sub">S'abonner</a></div><div class="hint" data-i18n="scroll">Défiler</div></div></div>
 
@@ -176,7 +175,7 @@ nav{padding:.8rem 1rem}.links{gap:.7rem}.links a{font-size:.58rem;letter-spacing
 
 <div class="s" id="store"><div class="label" data-i18n="sec_store">Boutique</div><div class="sgrid"><div class="sitem"><h3>Woo! Music</h3><div class="m" data-i18n="store_meta">MP3 haute qualité · Téléchargement immédiat</div><div class="p">2 €</div><button class="btn red" onclick="openM('Woo! Music','2')" data-i18n="btn_buy">Acheter</button></div><div class="sitem"><h3>Dance With Me Tonight</h3><div class="m" data-i18n="store_meta">MP3 haute qualité · Téléchargement immédiat</div><div class="p">2 €</div><button class="btn red" onclick="openM('Dance With Me Tonight','2')" data-i18n="btn_buy">Acheter</button></div></div></div>
 
-<footer><a href="#" class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">TKO</a><div class="socials"><a href="https://www.tiktok.com/@zaydennk" target="_blank" rel="noopener">TikTok</a></div><p data-i18n="copyright">© 2025 TKO — Tous droits réservés</p></footer>
+<footer><a href="#" class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">TKO</a><p data-i18n="copyright">© 2025 TKO — Tous droits réservés</p></footer>
 
 <div class="mo" id="mo"><div class="mod"><div class="mt" id="mt">Woo! Music</div><div class="ms" data-i18n="modal_sub">MP3 haute qualité · Téléchargement immédiat</div><div class="mp" id="mp">2 € <span data-i18n="modal_unique">achat unique</span></div><div class="mnote" data-i18n="modal_note">💾 Une fois le paiement effectué sur Gumroad, tu recevras immédiatement le lien de téléchargement du MP3 par email.</div><button class="mb" onclick="goG()" data-i18n="modal_pay">Payer sur Gumroad</button><button class="mc" onclick="closeM()" data-i18n="modal_cancel">Annuler</button></div></div>
 
@@ -205,7 +204,7 @@ document.getElementById('mo').addEventListener('click',e=>{if(e.target.id==='mo'
 function submitForm(e){e.preventDefault();const f=document.getElementById('firstName').value.trim();const l=document.getElementById('lastName').value.trim();const m=document.getElementById('email').value.trim();const msg=document.getElementById('formMsg');msg.classList.add('show');setTimeout(()=>{msg.classList.remove('show')},5000);try{const subs=JSON.parse(localStorage.getItem('tko_subs')||'[]');subs.push({first:f,last:l,email:m,date:new Date().toISOString()});localStorage.setItem('tko_subs',JSON.stringify(subs))}catch(err){}e.target.reset();return false}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.15});
 document.querySelectorAll('.s').forEach(s=>io.observe(s));
-document.addEventListener('click',e=>{const l=document.getElementById('lang');if(l&&!l.contains(e.target))l.classList.remove('open')});
+document.addEventListener('click',e=>{const l=document.getElementById('lang');if(!l)return;if(!l.contains(e.target))l.classList.remove('open')});
 </script>
 </body>
 </html>
