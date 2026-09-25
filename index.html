@@ -1,142 +1,620 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TKO - Official Music Store</title>
-  <style>
-    :root { --bg: #090909; --gold: #f5b942; --orange: #ff6a00; --text: #f5f5f5; --muted: #b8b8b8; --border: rgba(255,255,255,0.12); }
-    * { box-sizing: border-box; scroll-behavior: smooth; }
-    body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: radial-gradient(circle at top left, rgba(255,106,0,0.22), transparent 35%), radial-gradient(circle at top right, rgba(245,185,66,0.15), transparent 30%), var(--bg); color: var(--text); }
-    header { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 30px; }
-    nav { position: fixed; top: 0; left: 0; width: 100%; padding: 18px 30px; display: flex; justify-content: space-between; align-items: center; background: rgba(9,9,9,0.82); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; }
-    nav .logo { font-size: 24px; font-weight: 900; letter-spacing: 3px; color: var(--gold); }
-    nav a { color: var(--text); text-decoration: none; margin-left: 20px; font-size: 14px; text-transform: uppercase; }
-    .hero { max-width: 900px; margin-top: 70px; }
-    .tag { display: inline-block; padding: 8px 14px; border: 1px solid var(--gold); color: var(--gold); border-radius: 100px; font-size: 13px; text-transform: uppercase; margin-bottom: 20px; }
-    h1 { font-size: clamp(70px, 12vw, 160px); margin: 0; line-height: 0.9; letter-spacing: -5px; }
-    .subtitle { font-size: clamp(22px, 4vw, 44px); margin: 24px 0; font-weight: 700; }
-    .description { color: var(--muted); font-size: 18px; max-width: 650px; line-height: 1.6; }
-    .buttons { margin-top: 35px; display: flex; gap: 15px; }
-    .btn { display: inline-block; padding: 14px 22px; border-radius: 8px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 14px; }
-    .btn-primary { background: linear-gradient(135deg, var(--gold), var(--orange)); color: #111; }
-    .btn-secondary { border: 1px solid var(--border); color: var(--text); }
-    section { padding: 90px 30px; max-width: 1150px; margin: auto; }
-    section h2 { font-size: 42px; margin-bottom: 25px; }
-    .music-list { display: grid; gap: 18px; }
-    .track { background: rgba(255,255,255,0.045); border: 1px solid var(--border); border-radius: 16px; padding: 22px; display: grid; grid-template-columns: 50px 1fr auto; align-items: center; gap: 18px; }
-    .track-number { font-size: 24px; color: var(--gold); font-weight: 900; }
-    .track h3 { margin: 0 0 8px; font-size: 24px; }
-    .track p { margin: 0; color: var(--muted); }
-    .track audio { width: 260px; max-width: 100%; }
-    .about { display: grid; grid-template-columns: 320px 1fr; gap: 35px; align-items: center; }
-    .photo { width: 100%; aspect-ratio: 1 / 1; border-radius: 22px; background: linear-gradient(135deg, rgba(245,185,66,0.25), rgba(255,106,0,0.15)), #1a1a1a; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 20px; text-align: center; padding: 20px; }
-    .about p { color: var(--muted); line-height: 1.7; font-size: 18px; }
-    .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
-    .tags span { background: rgba(245,185,66,0.12); color: var(--gold); border: 1px solid rgba(245,185,66,0.35); padding: 8px 12px; border-radius: 100px; font-size: 13px; }
-    .plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-    .plan { background: rgba(255,255,255,0.045); border: 1px solid var(--border); border-radius: 18px; padding: 28px; }
-    .plan h3 { font-size: 28px; margin: 0; }
-    .price { font-size: 34px; color: var(--gold); font-weight: 900; margin: 16px 0; }
-    .plan ul { padding-left: 20px; color: var(--muted); line-height: 1.9; }
-    .store-card { background: linear-gradient(135deg, rgba(245,185,66,0.12), rgba(255,106,0,0.08)); border: 1px solid var(--border); border-radius: 18px; padding: 30px; margin-top: 25px; }
-    .store-card h3 { font-size: 30px; margin-top: 0; }
-    footer { padding: 35px 30px; text-align: center; color: var(--muted); border-top: 1px solid var(--border); }
-    @media (max-width: 800px) { nav { padding: 15px; } nav a { margin-left: 10px; font-size: 12px; } .track { grid-template-columns: 1fr; } .track audio { width: 100%; } .about { grid-template-columns: 1fr; } .plans { grid-template-columns: 1fr; } }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>TKO — Official Music Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg: #080808;
+  --red: #cc0000;
+  --red2: #ff2020;
+  --gold: #e8b84b;
+  --white: #f2f2f2;
+  --muted: #888;
+  --grey: #141414;
+  --grey2: #1e1e1e;
+  --border: rgba(255,255,255,0.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  overflow-x:hidden;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1rem 2rem;
+  background:rgba(8,8,8,0.93);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  z-index:100;
+}
+.nav-logo{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2rem;letter-spacing:0.15em;
+  color:var(--red2);
+  text-shadow:0 0 20px rgba(204,0,0,0.5);
+}
+.nav-links{display:flex;gap:2rem;}
+.nav-links a{
+  color:var(--white);text-decoration:none;
+  font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;
+  opacity:0.6;transition:opacity 0.2s,color 0.2s;
+}
+.nav-links a:hover{opacity:1;color:var(--red2);}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 2rem 4rem;
+  position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(204,0,0,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 20%, rgba(255,32,32,0.08) 0%, transparent 45%);
+}
+.hero-corner{
+  position:absolute;top:0;right:0;
+  width:50vw;height:100vh;
+  background:linear-gradient(135deg, rgba(204,0,0,0.06) 0%, transparent 60%);
+  border-left:1px solid rgba(204,0,0,0.12);
+}
+.hero-eyebrow{
+  font-size:0.72rem;letter-spacing:0.35em;text-transform:uppercase;
+  color:var(--red2);margin-bottom:1rem;
+  position:relative;z-index:2;
+  display:flex;align-items:center;gap:0.8rem;
+}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--red2);}
+.hero-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(7rem,20vw,18rem);
+  line-height:0.88;
+  position:relative;z-index:2;
+  color:var(--white);
+  text-shadow:0 0 80px rgba(204,0,0,0.25);
+}
+.hero-title .red{color:var(--red2);}
+.hero-sub{
+  font-size:clamp(1rem,2.5vw,1.5rem);
+  font-weight:300;opacity:0.5;
+  margin-top:1.2rem;
+  position:relative;z-index:2;
+  letter-spacing:0.05em;
+}
+.hero-cta{
+  display:flex;gap:1rem;margin-top:2.5rem;
+  position:relative;z-index:2;
+}
+.btn-red{
+  padding:0.85rem 2rem;
+  background:var(--red);
+  color:var(--white);border:none;
+  font-family:'Inter',sans-serif;font-size:0.8rem;
+  font-weight:600;letter-spacing:0.15em;text-transform:uppercase;
+  border-radius:3px;cursor:pointer;text-decoration:none;
+  transition:background 0.15s,box-shadow 0.15s;
+}
+.btn-red:hover{background:var(--red2);box-shadow:0 0 24px rgba(255,32,32,0.35);}
+.btn-outline{
+  padding:0.85rem 2rem;
+  background:none;border:1px solid rgba(255,255,255,0.2);
+  color:var(--white);
+  font-family:'Inter',sans-serif;font-size:0.8rem;
+  font-weight:600;letter-spacing:0.15em;text-transform:uppercase;
+  border-radius:3px;cursor:pointer;text-decoration:none;
+  transition:border-color 0.15s,color 0.15s;
+}
+.btn-outline:hover{border-color:var(--red2);color:var(--red2);}
+
+/* ── SECTION ── */
+.section{padding:6rem 2rem;max-width:960px;margin:0 auto;}
+.section-label{
+  font-size:0.68rem;letter-spacing:0.35em;text-transform:uppercase;
+  color:var(--red2);margin-bottom:2.5rem;
+  display:flex;align-items:center;gap:0.8rem;
+}
+.section-label::before{content:'';width:24px;height:2px;background:var(--red);}
+
+/* ── TRACKS ── */
+.tracks{display:flex;flex-direction:column;gap:2px;}
+.track-card{
+  background:var(--grey);
+  border-radius:4px;
+  overflow:hidden;
+  border:1px solid transparent;
+  transition:border-color 0.2s;
+}
+.track-card:hover{border-color:rgba(204,0,0,0.3);}
+.track-card.active{border-color:var(--red);}
+.track-top{
+  display:grid;
+  grid-template-columns:52px 1fr auto;
+  align-items:center;
+  gap:1rem;
+  padding:1.2rem 1.5rem;
+  cursor:pointer;
+}
+.track-num{
+  width:42px;height:42px;
+  border-radius:50%;
+  background:var(--grey2);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;font-size:1.1rem;
+  color:var(--muted);
+  transition:background 0.2s,color 0.2s;
+  flex-shrink:0;
+}
+.track-card.active .track-num{background:var(--red);color:var(--white);}
+.track-info{min-width:0;}
+.track-name{
+  font-size:1rem;font-weight:600;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.track-card.active .track-name{color:var(--red2);}
+.track-meta{font-size:0.72rem;color:var(--muted);margin-top:0.2rem;}
+.track-actions{display:flex;align-items:center;gap:0.75rem;}
+.btn-buy{
+  background:none;border:1px solid var(--red);
+  color:var(--red2);
+  padding:0.4rem 1rem;
+  font-family:'Inter',sans-serif;font-size:0.72rem;
+  font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  border-radius:2px;cursor:pointer;
+  white-space:nowrap;
+  transition:background 0.15s,color 0.15s;
+}
+.btn-buy:hover{background:var(--red);color:var(--white);}
+
+/* PREVIEW BAR — 30 sec */
+.preview-wrap{
+  display:none;
+  padding:0 1.5rem 1.2rem;
+  flex-direction:column;gap:0.6rem;
+}
+.track-card.active .preview-wrap{display:flex;}
+.preview-label{
+  font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--red2);opacity:0.7;
+}
+.preview-row{display:flex;align-items:center;gap:0.8rem;}
+.play-mini{
+  width:34px;height:34px;border-radius:50%;
+  background:var(--red);border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:background 0.15s;
+}
+.play-mini:hover{background:var(--red2);}
+.play-mini svg{width:14px;height:14px;fill:white;}
+.preview-progress{
+  flex:1;height:3px;background:#2a2a2a;border-radius:2px;
+  cursor:pointer;position:relative;
+}
+.preview-fill{
+  height:100%;background:var(--red);border-radius:2px;
+  width:0%;transition:width 0.25s linear;
+  pointer-events:none;
+}
+.preview-time{font-size:0.68rem;color:var(--muted);white-space:nowrap;}
+.preview-note{font-size:0.65rem;color:var(--muted);opacity:0.6;font-style:italic;}
+
+/* ── BIO ── */
+.bio-grid{display:grid;grid-template-columns:260px 1fr;gap:3rem;align-items:start;}
+.bio-photo{
+  width:100%;aspect-ratio:1/1;border-radius:4px;
+  background:var(--grey);
+  border:1px solid rgba(204,0,0,0.2);
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:0.5rem;
+  color:var(--muted);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;
+  overflow:hidden;
+}
+.bio-photo img{width:100%;height:100%;object-fit:cover;}
+.bio-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:3.5rem;line-height:1;
+  margin-bottom:1.2rem;
+}
+.bio-title span{color:var(--red2);}
+.bio-text p{font-size:0.9rem;opacity:0.6;line-height:1.85;margin-bottom:0.9rem;}
+.bio-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.2rem;}
+.bio-tag{
+  border:1px solid rgba(204,0,0,0.35);color:var(--red2);
+  padding:0.25rem 0.75rem;font-size:0.68rem;
+  letter-spacing:0.12em;text-transform:uppercase;border-radius:2px;
+}
+
+/* ── PLANS ── */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.plan{
+  background:var(--grey);border-radius:6px;padding:2rem;
+  border:1px solid transparent;transition:border-color 0.2s;
+}
+.plan:hover{border-color:rgba(204,0,0,0.3);}
+.plan.hot{border-color:var(--red);}
+.plan-badge{
+  display:inline-block;
+  background:var(--red);color:white;
+  font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  padding:0.2rem 0.6rem;border-radius:2px;margin-bottom:1rem;
+}
+.plan-name{
+  font-family:'Bebas Neue',sans-serif;font-size:2rem;
+  color:var(--red2);margin-bottom:0.4rem;
+}
+.plan-price{font-size:2.8rem;font-weight:300;margin-bottom:1.5rem;}
+.plan-price span{font-size:0.85rem;opacity:0.45;}
+.plan-features{list-style:none;margin-bottom:2rem;}
+.plan-features li{
+  font-size:0.85rem;opacity:0.6;
+  padding:0.45rem 0;border-bottom:1px solid #222;
+  display:flex;align-items:center;gap:0.6rem;
+}
+.plan-features li::before{content:'▸';color:var(--red);font-size:0.7rem;}
+.plan-btn{
+  width:100%;padding:0.9rem;
+  background:none;border:1px solid var(--red);
+  color:var(--red2);
+  font-family:'Inter',sans-serif;font-size:0.78rem;
+  font-weight:600;letter-spacing:0.15em;text-transform:uppercase;
+  border-radius:3px;cursor:pointer;transition:all 0.15s;
+}
+.plan-btn:hover,.plan.hot .plan-btn{background:var(--red);color:white;}
+
+/* ── STORE ── */
+.store-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.store-item{
+  background:var(--grey);border-radius:6px;padding:1.8rem;
+  border:1px solid var(--border);
+  display:flex;flex-direction:column;gap:1rem;
+  transition:border-color 0.2s;
+}
+.store-item:hover{border-color:rgba(204,0,0,0.3);}
+.store-item-title{font-size:1.1rem;font-weight:600;}
+.store-item-meta{font-size:0.78rem;color:var(--muted);}
+.store-item-price{font-size:1.8rem;font-weight:300;color:var(--red2);}
+
+/* ── MODAL ── */
+.modal-overlay{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,0.88);
+  z-index:200;display:none;
+  align-items:center;justify-content:center;padding:1rem;
+}
+.modal-overlay.open{display:flex;}
+.modal{
+  background:#111;border:1px solid rgba(204,0,0,0.25);
+  border-radius:8px;padding:2.5rem;
+  max-width:380px;width:100%;
+}
+.modal-title{
+  font-family:'Bebas Neue',sans-serif;font-size:2rem;
+  color:var(--red2);margin-bottom:0.4rem;
+}
+.modal-sub{font-size:0.82rem;opacity:0.5;margin-bottom:1.8rem;}
+.modal-price{font-size:2.8rem;font-weight:300;margin-bottom:2rem;}
+.modal-price span{font-size:0.85rem;opacity:0.4;}
+.modal-btn{
+  width:100%;padding:1rem;
+  background:var(--red);border:none;color:white;
+  font-family:'Inter',sans-serif;font-size:0.82rem;
+  font-weight:600;letter-spacing:0.15em;text-transform:uppercase;
+  border-radius:4px;cursor:pointer;margin-bottom:0.75rem;
+  transition:background 0.15s;
+}
+.modal-btn:hover{background:var(--red2);}
+.modal-close{
+  width:100%;padding:0.75rem;
+  background:none;border:1px solid #2a2a2a;color:var(--white);
+  font-family:'Inter',sans-serif;font-size:0.78rem;
+  border-radius:4px;cursor:pointer;opacity:0.45;transition:opacity 0.15s;
+}
+.modal-close:hover{opacity:1;}
+
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid var(--border);
+  padding:2.5rem 2rem;
+  display:flex;justify-content:space-between;align-items:center;
+  max-width:960px;margin:0 auto;
+}
+.footer-logo{
+  font-family:'Bebas Neue',sans-serif;font-size:1.6rem;
+  color:var(--red);opacity:0.5;
+}
+footer p{font-size:0.72rem;opacity:0.3;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  nav{padding:1rem 1.2rem;}
+  .nav-links{gap:1rem;}
+  .nav-links a{font-size:0.65rem;}
+  .hero{padding:0 1.2rem 3rem;}
+  .section{padding:4rem 1.2rem;}
+  .bio-grid{grid-template-columns:1fr;}
+  .plans{grid-template-columns:1fr;}
+  .store-grid{grid-template-columns:1fr;}
+  .track-top{grid-template-columns:42px 1fr;}
+  .track-actions{grid-column:1/-1;justify-content:flex-end;}
+  footer{flex-direction:column;gap:1rem;text-align:center;}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;}}
+</style>
 </head>
 <body>
-  <nav>
-    <div class="logo">TKO</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">TKO</div>
+  <div class="nav-links">
+    <a href="#music">Music</a>
+    <a href="#about">About</a>
+    <a href="#subscribe">Subscribe</a>
+    <a href="#store">Store</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-corner"></div>
+  <div class="hero-eyebrow">Official Music Store</div>
+  <h1 class="hero-title">TK<span class="red">O</span></h1>
+  <p class="hero-sub">Funk · Soul · ElectroHouse</p>
+  <div class="hero-cta">
+    <a class="btn-red" href="#music">Écouter</a>
+    <a class="btn-outline" href="#subscribe">S'abonner</a>
+  </div>
+</div>
+
+<!-- MUSIC -->
+<div class="section" id="music">
+  <div class="section-label">Music</div>
+  <div class="tracks" id="trackList">
+
+    <div class="track-card" id="track-0">
+      <div class="track-top" onclick="toggleTrack(0)">
+        <div class="track-num">1</div>
+        <div class="track-info">
+          <div class="track-name">Woo! Music</div>
+          <div class="track-meta">TKO · Original Track · 2025</div>
+        </div>
+        <div class="track-actions">
+          <button class="btn-buy" onclick="event.stopPropagation();openModal('Woo! Music','2')">2 € — Acheter</button>
+        </div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-label">Extrait 30 secondes</div>
+        <div class="preview-row">
+          <button class="play-mini" id="btn-0" onclick="togglePlay(0,'woo-music.mp3')">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <div class="preview-progress" onclick="seekTrack(event,0)">
+            <div class="preview-fill" id="fill-0"></div>
+          </div>
+          <span class="preview-time" id="time-0">0:00 / 0:30</span>
+        </div>
+        <div class="preview-note">Achetez le morceau complet pour 2 €</div>
+      </div>
+    </div>
+
+    <div class="track-card" id="track-1">
+      <div class="track-top" onclick="toggleTrack(1)">
+        <div class="track-num">2</div>
+        <div class="track-info">
+          <div class="track-name">Dance With Me Tonight</div>
+          <div class="track-meta">TKO · Original Track · 2025</div>
+        </div>
+        <div class="track-actions">
+          <button class="btn-buy" onclick="event.stopPropagation();openModal('Dance With Me Tonight','2')">2 € — Acheter</button>
+        </div>
+      </div>
+      <div class="preview-wrap">
+        <div class="preview-label">Extrait 30 secondes</div>
+        <div class="preview-row">
+          <button class="play-mini" id="btn-1" onclick="togglePlay(1,'Dance%20With%20Me%20Tonight.mp3')">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <div class="preview-progress" onclick="seekTrack(event,1)">
+            <div class="preview-fill" id="fill-1"></div>
+          </div>
+          <span class="preview-time" id="time-1">0:00 / 0:30</span>
+        </div>
+        <div class="preview-note">Achetez le morceau complet pour 2 €</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section" id="about">
+  <div class="section-label">About</div>
+  <div class="bio-grid">
+    <div class="bio-photo">
+      <!-- <img src="photo.jpg" alt="TKO"> -->
+      Ta photo ici
+    </div>
     <div>
-      <a href="#music">Music</a>
-      <a href="#about">About</a>
-      <a href="#subscribe">Subscribe</a>
-      <a href="#store">Store</a>
-    </div>
-  </nav>
-  <header>
-    <div class="hero">
-      <span class="tag">Official Music Store</span>
-      <h1>TKO</h1>
-      <div class="subtitle">Funk. Soul. ElectroHouse.</div>
-      <p class="description">Une musique qui vient du plancher de grange et va jusqu'aux étoiles. Des basses chaudes, des grooves funk, une énergie dancefloor et une âme soul.</p>
-      <div class="buttons">
-        <a class="btn btn-primary" href="#music">Écouter</a>
-        <a class="btn btn-secondary" href="#subscribe">S’abonner</a>
-      </div>
-    </div>
-  </header>
-  <section id="music">
-    <h2>Music</h2>
-    <div class="music-list">
-      <div class="track">
-        <div class="track-number">1</div>
-        <div>
-          <h3>Woo! Music</h3>
-          <p>TKO · Original Track</p>
-        </div>
-        <audio controls preload="none"><source src="woo-music.mp3" type="audio/mpeg"></audio>
-      </div>
-      <div class="track">
-        <div class="track-number">2</div>
-        <div>
-          <h3>Dance With Me Tonight</h3>
-          <p>TKO · Original Track</p>
-        </div>
-        <audio controls preload="none"><source src="Dance%20With%20Me%20Tonight.mp3" type="audio/mpeg"></audio>
-      </div>
-    </div>
-  </section>
-  <section id="about">
-    <h2>About</h2>
-    <div class="about">
-      <div class="photo">TKO<br>Artist Photo</div>
-      <div>
-        <p>Né dans l'énergie brute du funk des années 80, TKO fusionne les basses analogiques, l’âme soul, les grooves disco et l’électricité de l’ElectroHouse moderne.</p>
+      <h2 class="bio-title">TK<span>O</span></h2>
+      <div class="bio-text">
+        <p>Né dans l'énergie brute du funk des années 80, TKO fusionne les basses analogiques de Cerrone, l'âme de Shalamar et l'électricité de l'ElectroHouse moderne.</p>
         <p>Une musique qui vient du plancher de grange et qui fait trembler les dancefloors en 2025.</p>
-        <div class="tags">
-          <span>Funk</span><span>Disco</span><span>ElectroHouse</span><span>Soul</span><span>P-Funk</span><span>R&B</span>
-        </div>
+      </div>
+      <div class="bio-tags">
+        <span class="bio-tag">Funk</span>
+        <span class="bio-tag">Disco</span>
+        <span class="bio-tag">ElectroHouse</span>
+        <span class="bio-tag">Soul</span>
+        <span class="bio-tag">P-Funk</span>
+        <span class="bio-tag">R&B</span>
       </div>
     </div>
-  </section>
-  <section id="subscribe">
-    <h2>Subscribe</h2>
-    <div class="plans">
-      <div class="plan">
-        <h3>Fan</h3>
-        <div class="price">Gratuit</div>
-        <ul>
-          <li>Accès écoute illimitée</li>
-          <li>Nouveautés en avant-première</li>
-          <li>Newsletter exclusive</li>
-        </ul>
-        <a class="btn btn-primary" href="#">S’abonner</a>
-      </div>
-      <div class="plan">
-        <h3>VIP</h3>
-        <div class="price">Bientôt</div>
-        <ul>
-          <li>Tout l’abonnement Fan</li>
-          <li>Téléchargements inclus</li>
-          <li>Instrumentales exclusives</li>
-          <li>Behind the scenes</li>
-        </ul>
-        <a class="btn btn-primary" href="#">Devenir VIP</a>
-      </div>
+  </div>
+</div>
+
+<!-- SUBSCRIBE -->
+<div class="section" id="subscribe">
+  <div class="section-label">Subscribe</div>
+  <div class="plans">
+    <div class="plan">
+      <div class="plan-name">Fan</div>
+      <div class="plan-price">Gratuit <span></span></div>
+      <ul class="plan-features">
+        <li>Accès écoute illimitée</li>
+        <li>Nouveautés en avant-première</li>
+        <li>Newsletter exclusive</li>
+      </ul>
+      <button class="plan-btn">S'abonner</button>
     </div>
-  </section>
-  <section id="store">
-    <h2>Store</h2>
-    <div class="store-card">
-      <h3>Woo! Music</h3>
-      <p>Téléchargement MP3 haute qualité · Livraison immédiate</p>
-      <a class="btn btn-primary" href="#">Acheter le morceau</a>
+    <div class="plan hot">
+      <div class="plan-badge">Bientôt</div>
+      <div class="plan-name">VIP</div>
+      <div class="plan-price">7 € <span>/ mois</span></div>
+      <ul class="plan-features">
+        <li>Tout l'abonnement Fan</li>
+        <li>Téléchargements inclus</li>
+        <li>Instrumentales exclusives</li>
+        <li>Behind the scenes</li>
+      </ul>
+      <button class="plan-btn">Devenir VIP</button>
     </div>
-  </section>
-  <footer>
-    TKO<br>© 2025 TKO — Tous droits réservés
-  </footer>
+  </div>
+</div>
+
+<!-- STORE -->
+<div class="section" id="store">
+  <div class="section-label">Store</div>
+  <div class="store-grid">
+    <div class="store-item">
+      <div class="store-item-title">Woo! Music</div>
+      <div class="store-item-meta">MP3 haute qualité · Téléchargement immédiat</div>
+      <div class="store-item-price">2 €</div>
+      <button class="btn-red" onclick="openModal('Woo! Music','2')">Acheter</button>
+    </div>
+    <div class="store-item">
+      <div class="store-item-title">Dance With Me Tonight</div>
+      <div class="store-item-meta">MP3 haute qualité · Téléchargement immédiat</div>
+      <div class="store-item-price">2 €</div>
+      <button class="btn-red" onclick="openModal('Dance With Me Tonight','2')">Acheter</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">TKO</div>
+  <p>© 2025 TKO — Tous droits réservés</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-title" id="modalTitle">Woo! Music</div>
+    <div class="modal-sub">MP3 haute qualité · Téléchargement immédiat</div>
+    <div class="modal-price" id="modalPrice">2 € <span>achat unique</span></div>
+    <button class="modal-btn" onclick="goGumroad()">Payer sur Gumroad</button>
+    <button class="modal-close" onclick="closeModal()">Annuler</button>
+  </div>
+</div>
+
+<script>
+// ── PREVIEW 30 SEC ──
+const PREVIEW_MAX = 30;
+let audios = {};
+let intervals = {};
+let playing = {};
+
+function toggleTrack(i) {
+  const card = document.getElementById('track-' + i);
+  const wasActive = card.classList.contains('active');
+  document.querySelectorAll('.track-card').forEach(c => c.classList.remove('active'));
+  stopAll();
+  if (!wasActive) card.classList.add('active');
+}
+
+function togglePlay(i, src) {
+  if (!audios[i]) {
+    audios[i] = new Audio(src);
+    audios[i].addEventListener('ended', () => stopTrack(i));
+    audios[i].addEventListener('timeupdate', () => {
+      const t = audios[i].currentTime;
+      if (t >= PREVIEW_MAX) { stopTrack(i); return; }
+      const pct = (t / PREVIEW_MAX) * 100;
+      document.getElementById('fill-' + i).style.width = pct + '%';
+      document.getElementById('time-' + i).textContent = formatT(t) + ' / 0:30';
+    });
+  }
+  if (playing[i]) {
+    audios[i].pause();
+    playing[i] = false;
+    setBtnIcon(i, false);
+  } else {
+    stopAll();
+    audios[i].play();
+    playing[i] = true;
+    setBtnIcon(i, true);
+  }
+}
+
+function stopTrack(i) {
+  if (audios[i]) { audios[i].pause(); audios[i].currentTime = 0; }
+  playing[i] = false;
+  setBtnIcon(i, false);
+  document.getElementById('fill-' + i).style.width = '0%';
+  document.getElementById('time-' + i).textContent = '0:00 / 0:30';
+}
+
+function stopAll() {
+  Object.keys(audios).forEach(i => stopTrack(i));
+}
+
+function seekTrack(e, i) {
+  if (!audios[i]) return;
+  const bar = e.currentTarget;
+  const pct = (e.offsetX / bar.offsetWidth);
+  audios[i].currentTime = pct * PREVIEW_MAX;
+}
+
+function setBtnIcon(i, isPlaying) {
+  const btn = document.getElementById('btn-' + i);
+  if (!btn) return;
+  btn.innerHTML = isPlaying
+    ? '<svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:white"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>'
+    : '<svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:white"><path d="M8 5v14l11-7z"/></svg>';
+}
+
+function formatT(s) {
+  return Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
+}
+
+// ── MODAL ──
+function openModal(title, price) {
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalPrice').innerHTML = price + ' € <span>achat unique</span>';
+  document.getElementById('modalOverlay').classList.add('open');
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+}
+function goGumroad() {
+  window.open('https://gumroad.com/sousoumoula','_blank');
+  closeModal();
+}
+document.getElementById('modalOverlay').addEventListener('click', function(e){
+  if(e.target===this) closeModal();
+});
+</script>
 </body>
 </html>
